@@ -6,15 +6,15 @@ import ClaimCard from "./ui/ClaimCard";
 
 export default function Home() {
   return (
-    <main className="px-8 py-10">
-      <div className="flex justify-between items-center">
-        <p className="text-xl">
+    <main className="px-2 lg:px-8 py-10">
+      <div className="flex flex-col lg:flex-row justify-between items-center">
+        <p className="text-lg md:text-xl">
           <span className="font-bold">Hey John</span> -{" "}
           <span className="text-graytext">
             here's whats's happening with your store today
           </span>
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-4 lg:mt-0">
           <ClaimJbtcButton />
           <ClaimBscButton />
         </div>
@@ -66,16 +66,16 @@ export default function Home() {
         />
       </div>
       {/* recent community claim */}
-      <div className="grid grid-cols-5 gap-3 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 mt-4">
         <div className="col-span-3 border border-gray-200 rounded-lg">
-          <div className="px-5 py-4">
-            <p className="text-lg font-bold">Recent Community Claim</p>
+          <div className="px-3 lg:px-5 py-4">
+            <p className="text-base lg:text-lg font-bold">Recent Community Claim</p>
             <div className="flex justify-between items-center mt-1">
-              <p className="text-base text-graytext">
+              <p className="text-sm lg:text-base text-graytext">
                 Lorem ipsum dolor, sit amet consectetur adipis.
               </p>
               <Link
-                className="text-xs text-[#2D87F1] font-medium flex items-center justify-center gap-3"
+                className="text-[10px] text-[#2D87F1] font-medium flex items-center justify-center gap-3"
                 href="#"
               >
                 <span>See All Claims</span> <span>{">"}</span>
@@ -157,7 +157,7 @@ export default function Home() {
           {/* affiliate rewards card */}
           <div className="w-full px-5 pt-6 pb-4 border border-gray-200 rounded-lg">
             <p className="text-lg font-semibold">Affiliate Rewards</p>
-            <div className="grid grid-cols-3 gap-2 mt-5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-5">
               <div className="bg-[#FFF6E5] border border-gray-200 rounded-lg p-4">
                 <p className="text-[10px] uppercase">CLAIMED </p>
                 <p className="text-[#D99000] text-[32px] italic font-bold mt-1">
@@ -187,8 +187,8 @@ export default function Home() {
           Refer and earn daily rewards.{" "}
         </p>
         <div className="bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
-          <p className="text-[#0024D9] text-sm italic">https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025</p>
-          <img loading="lazy" src="copy-icon.png" alt="copy-icon" />
+          <p className="text-[#0024D9] text-sm italic truncate pr-2 flex-1">https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025</p>
+          <img loading="lazy" src="copy-icon.png" alt="copy-icon" className="flex-shrink-0" />
         </div>
       </div>
     </main>
