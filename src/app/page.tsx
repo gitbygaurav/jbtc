@@ -7,13 +7,18 @@ import ClaimCard from "./ui/ClaimCard";
 export default function Home() {
   return (
     <main className="px-2 lg:px-8 py-10">
-      <div className="flex flex-col lg:flex-row justify-between items-center">
-        <p className="text-lg md:text-xl">
-          <span className="font-bold">Hey John</span> -{" "}
-          <span className="text-graytext">
-            here's whats's happening with your store today
-          </span>
-        </p>
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
+        <div className="w-full bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
+          <p className="text-[#0024D9] text-sm italic truncate pr-2 flex-1">
+            https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025
+          </p>
+          <img
+            loading="lazy"
+            src="copy-icon.png"
+            alt="copy-icon"
+            className="flex-shrink-0"
+          />
+        </div>
         <div className="flex gap-4 mt-4 lg:mt-0">
           <ClaimJbtcButton />
           <ClaimBscButton />
@@ -69,7 +74,9 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 mt-4">
         <div className="col-span-3 border border-gray-200 rounded-lg">
           <div className="px-3 lg:px-5 py-4">
-            <p className="text-base lg:text-lg font-bold">Recent Community Claim</p>
+            <p className="text-base lg:text-lg font-bold">
+              Recent Community Claim
+            </p>
             <div className="flex justify-between items-center mt-1">
               <p className="text-sm lg:text-base text-graytext">
                 Lorem ipsum dolor, sit amet consectetur adipis.
@@ -82,41 +89,45 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <ClaimCard
-            status="confirmed"
-            address="0x9a2...47F"
-            justClaimed={4.2}
-            balanceEarned={4.2}
-            referrerEarned={0.42}
-          />
-          <ClaimCard
-            status="confirmed"
-            address="0x9a2...47F"
-            justClaimed={4.2}
-            balanceEarned={4.2}
-            referrerEarned={0.42}
-          />
-          <ClaimCard
-            status="confirmed"
-            address="0x9a2...47F"
-            justClaimed={4.2}
-            balanceEarned={4.2}
-            referrerEarned={0.42}
-          />
-          <ClaimCard
-            status="pending"
-            address="0x9a2...47F"
-            justClaimed={4.2}
-            balanceEarned={4.2}
-            referrerEarned={0.42}
-          />
-          <ClaimCard
-            status="pending"
-            address="0x9a2...47F"
-            justClaimed={4.2}
-            balanceEarned={4.2}
-            referrerEarned={0.42}
-          />
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex flex-col min-w-max">
+              <ClaimCard
+                status="confirmed"
+                address="0x9a2...47F"
+                justClaimed={4.2}
+                balanceEarned={4.2}
+                referrerEarned={0.42}
+              />
+              <ClaimCard
+                status="confirmed"
+                address="0x9a2...47F"
+                justClaimed={4.2}
+                balanceEarned={4.2}
+                referrerEarned={0.42}
+              />
+              <ClaimCard
+                status="confirmed"
+                address="0x9a2...47F"
+                justClaimed={4.2}
+                balanceEarned={4.2}
+                referrerEarned={0.42}
+              />
+              <ClaimCard
+                status="pending"
+                address="0x9a2...47F"
+                justClaimed={4.2}
+                balanceEarned={4.2}
+                referrerEarned={0.42}
+              />
+              <ClaimCard
+                status="pending"
+                address="0x9a2...47F"
+                justClaimed={4.2}
+                balanceEarned={4.2}
+                referrerEarned={0.42}
+              />
+            </div>
+          </div>
         </div>
         {/* your holding rank card */}
         <div className="col-span-2 flex flex-col justify-between">
@@ -183,12 +194,17 @@ export default function Home() {
       {/* refferal card */}
       <div className="border border-gray-200 rounded-lg px-5 py-4 mt-4">
         <p className="text-lg font-bold">Referral</p>
-        <p className="text-sm text-graytext">
-          Refer and earn daily rewards.{" "}
-        </p>
+        <p className="text-sm text-graytext">Refer and earn daily rewards. </p>
         <div className="bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
-          <p className="text-[#0024D9] text-sm italic truncate pr-2 flex-1">https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025</p>
-          <img loading="lazy" src="copy-icon.png" alt="copy-icon" className="flex-shrink-0" />
+          <p className="text-[#0024D9] text-sm italic truncate pr-2 flex-1">
+            https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025
+          </p>
+          <img
+            loading="lazy"
+            src="copy-icon.png"
+            alt="copy-icon"
+            className="flex-shrink-0"
+          />
         </div>
       </div>
     </main>
