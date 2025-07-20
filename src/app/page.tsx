@@ -7,8 +7,10 @@ import ClaimCard from "./ui/ClaimCard";
 export default function Home() {
   return (
     <main className="px-2 lg:px-8 py-10">
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-        <div className="w-full bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
+      <div className="border border-gray-200 rounded-lg px-5 py-4 mt-4">
+        <p className="text-lg font-bold">Referral</p>
+        <p className="text-sm text-graytext">Refer and earn daily rewards. </p>
+        <div className="bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
           <p className="text-[#0024D9] text-sm italic truncate pr-2 flex-1">
             https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025
           </p>
@@ -19,7 +21,9 @@ export default function Home() {
             className="flex-shrink-0"
           />
         </div>
-        <div className="flex gap-4 mt-4 lg:mt-0">
+      </div>
+      <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex gap-4 mt-4">
           <ClaimJbtcButton />
           <ClaimBscButton />
         </div>
@@ -130,7 +134,7 @@ export default function Home() {
           </div>
         </div>
         {/* your holding rank card */}
-        <div className="col-span-2 flex flex-col justify-between">
+        <div className="w-full col-span-2 flex flex-col justify-between">
           <div className="w-full px-5 pt-6 pb-4 border border-gray-200 rounded-lg">
             <p className="text-lg font-semibold">Your Holding Rank</p>
             <div className="flex justify-between items-center mt-4">
@@ -166,45 +170,29 @@ export default function Home() {
             </div>
           </div>
           {/* affiliate rewards card */}
-          <div className="w-full px-5 pt-6 pb-4 border border-gray-200 rounded-lg">
-            <p className="text-lg font-semibold">Affiliate Rewards</p>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-5">
+          <div className="w-full px-5 pt-6 pb-4 border border-gray-200 rounded-lg mt-3 lg:mt-0">
+            <p className="text-lg font-semibold">Referral Rewards</p>
+            <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-2 mt-5">
               <div className="bg-[#FFF6E5] border border-gray-200 rounded-lg p-4">
                 <p className="text-[10px] uppercase">CLAIMED </p>
-                <p className="text-[#D99000] text-[32px] italic font-bold mt-1">
+                <p className="text-[#D99000] text-[32px] font-bold mt-1">
                   500
                 </p>
               </div>
               <div className="bg-[#E5FFEE] border border-gray-200 rounded-lg p-4">
                 <p className="text-[10px] uppercase">Total Heads</p>
-                <p className="text-[#00D948] text-[32px] italic font-bold mt-1">
+                <p className="text-[#00D948] text-[32px] font-bold mt-1">
                   500
                 </p>
               </div>
               <div className="bg-[#E5EAFF] border border-gray-200 rounded-lg p-4">
                 <p className="text-[10px] uppercase">Total Holdings </p>
-                <p className="text-[#0024D9] text-[20px] italic font-bold mt-1">
+                <p className="text-[#0024D9] text-[20px] font-bold mt-1">
                   14,233,240 JBTC
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      {/* refferal card */}
-      <div className="border border-gray-200 rounded-lg px-5 py-4 mt-4">
-        <p className="text-lg font-bold">Referral</p>
-        <p className="text-sm text-graytext">Refer and earn daily rewards. </p>
-        <div className="bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
-          <p className="text-[#0024D9] text-sm italic truncate pr-2 flex-1">
-            https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025
-          </p>
-          <img
-            loading="lazy"
-            src="copy-icon.png"
-            alt="copy-icon"
-            className="flex-shrink-0"
-          />
         </div>
       </div>
     </main>
