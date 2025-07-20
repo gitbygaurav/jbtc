@@ -1,103 +1,196 @@
-import Image from "next/image";
+import Link from "next/link";
+import ClaimBscButton from "./components/ClaimBscButton";
+import ClaimJbtcButton from "./components/ClaimJbtcButton";
+import StatsCard from "./ui/StatsCard";
+import ClaimCard from "./ui/ClaimCard";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="px-8 py-10">
+      <div className="flex justify-between items-center">
+        <p className="text-xl">
+          <span className="font-bold">Hey John</span> -{" "}
+          <span className="text-graytext">
+            here's whats's happening with your store today
+          </span>
+        </p>
+        <div className="flex gap-4">
+          <ClaimJbtcButton />
+          <ClaimBscButton />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </div>
+      {/* stats area */}
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-4">
+        <StatsCard
+          title="total tokens in market"
+          subtitle="fixed total supply"
+          number={21000000}
+          percentage={100}
+          status={"up"}
+          colour="#2D87F1"
+        />
+        <StatsCard
+          title="available tokens"
+          subtitle="yet to be distributed"
+          number={14233240}
+          sign="+"
+          percentage={100}
+          status={"up"}
+          colour="#00D948"
+        />
+        <StatsCard
+          title="today's claim pool"
+          subtitle="Pool for today's claims"
+          number={5000}
+          sign="+"
+          percentage={5}
+          status={"up"}
+          colour="#D99000"
+        />
+        <StatsCard
+          title="Max You Can Claim"
+          subtitle="0.5% of wallet balance"
+          number={6}
+          percentage={0.5}
+          status={"up"}
+          colour="#419AD9"
+        />
+        <StatsCard
+          title="Your Wallet Balance"
+          subtitle="from connected wallet"
+          number={1200}
+          sign="-"
+          percentage={12}
+          status={"down"}
+          colour="#D90000"
+        />
+      </div>
+      {/* recent community claim */}
+      <div className="grid grid-cols-5 gap-3 mt-4">
+        <div className="col-span-3 border border-gray-200 rounded-lg">
+          <div className="px-5 py-4">
+            <p className="text-lg font-bold">Recent Community Claim</p>
+            <div className="flex justify-between items-center mt-1">
+              <p className="text-base text-graytext">
+                Lorem ipsum dolor, sit amet consectetur adipis.
+              </p>
+              <Link
+                className="text-xs text-[#2D87F1] font-medium flex items-center justify-center gap-3"
+                href="#"
+              >
+                <span>See All Claims</span> <span>{">"}</span>
+              </Link>
+            </div>
+          </div>
+          <ClaimCard
+            status="confirmed"
+            address="0x9a2...47F"
+            justClaimed={4.2}
+            balanceEarned={4.2}
+            referrerEarned={0.42}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <ClaimCard
+            status="confirmed"
+            address="0x9a2...47F"
+            justClaimed={4.2}
+            balanceEarned={4.2}
+            referrerEarned={0.42}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <ClaimCard
+            status="confirmed"
+            address="0x9a2...47F"
+            justClaimed={4.2}
+            balanceEarned={4.2}
+            referrerEarned={0.42}
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <ClaimCard
+            status="pending"
+            address="0x9a2...47F"
+            justClaimed={4.2}
+            balanceEarned={4.2}
+            referrerEarned={0.42}
+          />
+          <ClaimCard
+            status="pending"
+            address="0x9a2...47F"
+            justClaimed={4.2}
+            balanceEarned={4.2}
+            referrerEarned={0.42}
+          />
+        </div>
+        {/* your holding rank card */}
+        <div className="col-span-2 flex flex-col justify-between">
+          <div className="w-full px-5 pt-6 pb-4 border border-gray-200 rounded-lg">
+            <p className="text-lg font-semibold">Your Holding Rank</p>
+            <div className="flex justify-between items-center mt-4">
+              <p className="text-graytext text-xs font-medium">
+                You are in the top
+              </p>
+              <p className="text-graytext text-xs font-medium">09%</p>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-3 mt-3">
+              <div
+                className="bg-[#0024D9] h-3 rounded-full"
+                style={{ width: "10%" }}
+              ></div>
+            </div>
+            <p className="text-[#00D948] text-xs font-medium italic mt-3">
+              Only <b>740</b> users hold more than you.
+            </p>
+            <p className="text-[#D99000] text-xs font-medium italic mt-2">
+              HODL more to reach <b>Top 5%</b> and unlock leaderboard benefits!
+            </p>
+            <div className="w-full light-purple-gradient flex justify-between items-center px-4 py-3 mt-5 rounded-lg">
+              <div className="flex items-center gap-4">
+                <img
+                  loading="lazy"
+                  src="metamask-icon.png"
+                  alt="metamask-icon"
+                />
+                <p className="text-[#2D87F1] text-sm font-bold">
+                  2,40,146 JBTC
+                </p>
+              </div>
+              <p className="text-[#002540] text-xs font-semibold">Swap</p>
+            </div>
+          </div>
+          {/* affiliate rewards card */}
+          <div className="w-full px-5 pt-6 pb-4 border border-gray-200 rounded-lg">
+            <p className="text-lg font-semibold">Affiliate Rewards</p>
+            <div className="grid grid-cols-3 gap-2 mt-5">
+              <div className="bg-[#FFF6E5] border border-gray-200 rounded-lg p-4">
+                <p className="text-[10px] uppercase">CLAIMED </p>
+                <p className="text-[#D99000] text-[32px] italic font-bold mt-1">
+                  500
+                </p>
+              </div>
+              <div className="bg-[#E5FFEE] border border-gray-200 rounded-lg p-4">
+                <p className="text-[10px] uppercase">Total Heads</p>
+                <p className="text-[#00D948] text-[32px] italic font-bold mt-1">
+                  500
+                </p>
+              </div>
+              <div className="bg-[#E5EAFF] border border-gray-200 rounded-lg p-4">
+                <p className="text-[10px] uppercase">Total Holdings </p>
+                <p className="text-[#0024D9] text-[20px] italic font-bold mt-1">
+                  14,233,240 JBTC
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* refferal card */}
+      <div className="border border-gray-200 rounded-lg px-5 py-4 mt-4">
+        <p className="text-lg font-bold">Referral</p>
+        <p className="text-sm text-graytext">
+          Refer and earn daily rewards.{" "}
+        </p>
+        <div className="bg-[#F2FAFF] border border-gray-200 rounded-lg flex justify-between items-center px-4 py-3 mt-3">
+          <p className="text-[#0024D9] text-sm italic">https://www.jbtc.com?ref=u6bbtk&utm_source=referral-program&utm_medium=referral&utm_campaign=referral-program-Jul-2025</p>
+          <img loading="lazy" src="copy-icon.png" alt="copy-icon" />
+        </div>
+      </div>
+    </main>
   );
 }
