@@ -34,3 +34,12 @@ body {
 .light-purple-gradient {
   background: linear-gradient(133.81deg, rgba(125, 207, 255, 0.3) 0%, rgba(133, 65, 217, 0.1) 100%);
 }
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
