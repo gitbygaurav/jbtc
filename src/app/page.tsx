@@ -1,12 +1,11 @@
 import Link from "next/link";
-import ClaimBscButton from "./components/ClaimBscButton";
-import ClaimJbtcButton from "./components/ClaimJbtcButton";
+import ClaimJbtcButton from "./components/ClaimBscscanButton";
 import StatsCard from "./ui/StatsCard";
 import ClaimCard from "./ui/ClaimCard";
 
 export default function Home() {
   return (
-    <main className="px-2 lg:px-8 py-10">
+    <main className="px-2 lg:px-8 py-2">
       <div className="border border-gray-200 rounded-lg px-5 py-4 mt-4">
         <p className="text-lg font-bold">Referral</p>
         <p className="text-sm text-graytext">Refer and earn daily rewards. </p>
@@ -25,7 +24,6 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center gap-4">
         <div className="flex gap-4 mt-4">
           <ClaimJbtcButton />
-          <ClaimBscButton />
         </div>
       </div>
       {/* stats area */}
