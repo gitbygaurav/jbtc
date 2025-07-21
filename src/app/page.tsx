@@ -6,7 +6,7 @@ import ClaimBscscanButton from "./components/ClaimBscscanButton";
 
 export default function Home() {
   return (
-    <main className="px-2 lg:px-8 py-2">
+    <main className="px-2 lg:px-8 ">
       <div className="border border-gray-200 rounded-lg px-5 py-4 mt-4">
         <p className="text-lg font-bold">Referral</p>
         <p className="text-sm text-graytext">Refer and earn daily rewards. </p>
