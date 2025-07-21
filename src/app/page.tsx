@@ -1,7 +1,8 @@
 import Link from "next/link";
-import ClaimJbtcButton from "./components/ClaimBscscanButton";
 import StatsCard from "./ui/StatsCard";
 import ClaimCard from "./ui/ClaimCard";
+import ClaimJbtcButton from "./components/ClaimJbtcButton";
+import ClaimBscscanButton from "./components/ClaimBscscanButton";
 
 export default function Home() {
   return (
@@ -192,6 +193,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex items-center justify-center my-4">
+        <ClaimBscscanButton />
       </div>
     </main>
   );
